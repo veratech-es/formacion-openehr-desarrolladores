@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="bloodpressure.xsd">
+    <patient id="000000000000001">
+        <date>10/11/2018</date>
+        <systolic>95</systolic>
+        <diastolic>60</diastolic>
+        <position>3</position>
+    </patient>
+    <patient id="00000000000002">
+        <date>03/08/2018</date>
+        <systolic>126</systolic>
+        <diastolic>87</diastolic>
+        <position>0</position>
+    </patient>
+    <patient id="00000000000003">
+        <date>20/09/2020</date>
+        <systolic>115</systolic>
+        <diastolic>102</diastolic>
+        <position>1</position>
+    </patient>
+</data>

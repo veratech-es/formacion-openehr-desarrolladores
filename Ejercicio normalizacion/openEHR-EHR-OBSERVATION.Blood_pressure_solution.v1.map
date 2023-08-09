@@ -1,0 +1,165 @@
+archetype
+    openEHR-EHR-OBSERVATION.Blood_pressure_solution.v1
+
+description
+    original_author = <
+        ["date"] = <"20120327">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+objectBuilder
+    object_builder_definition = <"<?xml version='1.0' encoding='UTF-8'?><objectBuilder hasBagSemantics='false'><sourcePaths><sourcePath>/source[anySource]/type[XML]/document[anyDocument]/element[linkEHRvirtualIDPatient]</sourcePath></sourcePaths></objectBuilder>">
+mapping
+    map_definitions = <
+        ["/data[at0001]/events[at0002]/time[DVDATETIMEat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVDATETIMEat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@toString(@toISODateTime(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[date]/content[string],'dd/MM/yyyy'))</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0001 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0008]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0008')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/subject[PARTYSELFat]/external_ref[PARTYREFat]/id[GENERICIDat]"] = < 
+            items = <
+                ["scheme"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from GENERICIDat scheme]</comment><function><functionMapping><filter>TRUE</filter><correspondence>''</correspondence></functionMapping></function></attributeMapping>" >
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from GENERICIDat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'self'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/language[CODEPHRASEat]/terminology_id[TERMINOLOGYIDat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from TERMINOLOGYIDat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'ISO639'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0002 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0009]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0009 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0005]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0005 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0009]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0009')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/encoding[CODEPHRASEat]"] = < 
+            items = <
+                ["code_string"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from CODEPHRASEat code_string]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'UTF8'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0002')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/origin[DVDATETIMEat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVDATETIMEat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'20121212T111111'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/language[CODEPHRASEat]"] = < 
+            items = <
+                ["code_string"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from CODEPHRASEat code_string]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'en-gb'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0004]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0004')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/encoding[CODEPHRASEat]/terminology_id[TERMINOLOGYIDat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from TERMINOLOGYIDat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'RFC 3629'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/subject[PARTYSELFat]/external_ref[PARTYREFat]"] = < 
+            items = <
+                ["namespace"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from PARTYREFat namespace]</comment><function><functionMapping><filter>TRUE</filter><correspondence>''</correspondence></functionMapping></function></attributeMapping>" >
+                ["type"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from PARTYREFat type]</comment><function><functionMapping><filter>TRUE</filter><correspondence>''</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0000')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value[at0007]"] = < 
+            items = <
+                ["magnitude"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0007 magnitude]</comment><function><functionMapping><filter>TRUE</filter><correspondence>/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[diastolic]/content[integer]</correspondence></functionMapping></function></attributeMapping>" >
+                ["units"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0007 units]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'mm[Hg]'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value[at0011]"] = < 
+            items = <
+                ["magnitude"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0011 magnitude]</comment><function><functionMapping><filter>TRUE</filter><correspondence> @round-half-to-even(@toFloat((((2  *  /source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[systolic]/content[integer])  +  /source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[diastolic]/content[integer])  DIV  3)),2)</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0001')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0008]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0008 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0000 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@archetypeName()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0003 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0004]"] = < 
+            items = <
+                ["archetype_node_id"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='true'><comment>[mapping from at0004 archetype_node_id]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@code()</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0003')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0005]/name[DVTEXTat]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from DVTEXTat value]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@text('at0005')</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value[at0006]"] = < 
+            items = <
+                ["magnitude"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0006 magnitude]</comment><function><functionMapping><filter>TRUE</filter><correspondence>@toFloat(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[systolic]/content[integer])</correspondence></functionMapping></function></attributeMapping>" >
+                ["units"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0006 units]</comment><function><functionMapping><filter>TRUE</filter><correspondence>'mm[Hg]'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+        ["/data[at0001]/events[at0002]/data[at0003]/items[at0009]/value[at0010]"] = < 
+            items = <
+                ["value"] = < "<?xml version='1.0' encoding='UTF-8'?><attributeMapping isAttribute='false'><comment>[mapping from at0010 value]</comment><function><functionMapping><filter>(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[position]/content[integer]  =  0)</filter><correspondence>'Standing'</correspondence></functionMapping><functionMapping><filter>(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[position]/content[integer]  =  1)</filter><correspondence>'Sitting'</correspondence></functionMapping><functionMapping><filter>(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[position]/content[integer]  =  2)</filter><correspondence>'Reclining'</correspondence></functionMapping><functionMapping><filter>(/source[BloodPressure]/type[XML]/document[schema]/element[data]/element[patient]/element[position]/content[integer]  =  3)</filter><correspondence>'Lying'</correspondence></functionMapping><functionMapping><filter>TRUE</filter><correspondence>'Sitting'</correspondence></functionMapping></function></attributeMapping>" >
+            >
+        >
+    >
+
+

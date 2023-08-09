@@ -1,0 +1,124 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.Blood_pressure_exercise.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en-gb]>
+
+description
+    original_author = <
+        ["date"] = <"20120327">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en-gb"] = <
+            language = <[ISO_639-1::en-gb]>
+        >
+    >
+
+definition
+    OBSERVATION[at0000] occurrences matches {1..1} matches {  -- Blood pressure
+        data existence matches {1..1} matches {
+            HISTORY[at0001] occurrences matches {1..1} matches {  -- HISTORY
+                events existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {  -- POINT_EVENT
+                        data existence matches {1..1} matches {
+                            ITEM_LIST[at0003] occurrences matches {0..1} matches {  -- ITEM_LIST
+                                items existence matches {1..1} cardinality matches {0..4; ordered; unique} matches {
+                                    ELEMENT[at0004] occurrences matches {0..1} matches {  -- Systolic
+                                        value existence matches {0..1} matches {
+                                            DV_QUANTITY[at0006] occurrences matches {0..1} matches {  -- DV_QUANTITY
+                                                magnitude existence matches {1..1} matches {|>=0.0|}
+                                                units existence matches {1..1} matches {"mm[Hg]"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {  -- Diastolic
+                                        value existence matches {0..1} matches {
+                                            DV_QUANTITY[at0007] occurrences matches {0..1} matches {  -- DV_QUANTITY
+                                                units existence matches {1..1} matches {"mm[Hg]"}
+                                                magnitude existence matches {1..1} matches {|>=0.0|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0009] occurrences matches {0..1} matches {  -- Position
+                                        value existence matches {0..1} matches {
+                                            DV_TEXT[at0010] occurrences matches {0..1} matches {  -- DV_TEXT
+                                                value existence matches {1..1} matches {"Standing","Sitting","Reclining","Lying"; "Sitting"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0008] occurrences matches {0..1} matches {  -- Mean pressure
+                                        value existence matches {0..1} matches {
+                                            DV_QUANTITY[at0011] occurrences matches {0..1} matches {  -- DV_QUANTITY
+                                                units existence matches {1..1} matches {"mm[Hg]"}
+                                                magnitude existence matches {1..1} matches {|>=0.0|}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en-gb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Blood pressure">
+                    description = <"Blood pressure">
+                >
+                ["at0001"] = <
+                    text = <"HISTORY">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"POINT_EVENT">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ITEM_LIST">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"Systolic">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"Diastolic">
+                    description = <"">
+                >
+                ["at0006"] = <
+                    text = <"DV_QUANTITY">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"DV_QUANTITY">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"Position">
+                    description = <"">
+                >
+                ["at0010"] = <
+                    text = <"DV_TEXT">
+                    description = <"">
+                >
+                ["at0008"] = <
+                    text = <"Mean pressure">
+                    description = <"">
+                >
+                ["at0011"] = <
+                    text = <"DV_QUANTITY">
+                    description = <"">
+                >
+            >
+        >
+    >

@@ -1,0 +1,171 @@
+archetype (adl_version=1.4; uid=be423866-ff02-4970-85c3-06331b45f225)
+	openEHR-EHR-OBSERVATION.presion_sanguinea.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2021-02-22">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			keywords = <"presión sanguínea, presión arterial", ...>
+			use = <"Este arquetipo puede usarse en cualquier escenario de registro de una medida de presión sanguínea individual">
+			misuse = <"No usar para registrar series de medidas">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"5f637fbd-648b-3339-b9aa-6b1d42609948">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- Presión sanguínea
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {0..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..*} matches {    -- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] matches {    -- Sistólica
+										value matches {
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"mm[Hg]">
+														magnitude = <|0.0..500.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0005] matches {    -- Diastólica
+										value matches {
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"mm[Hg]">
+														magnitude = <|0.0..500.0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Comentarios
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0007] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Posición
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0010,    -- De pie
+									at0009,    -- Sentado
+									at0011,    -- Reclinado
+									at0012]    -- Tumbado
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	terminologies_available = <"SNOMED-CT", ...>
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Presión sanguínea">
+					description = <"Estructura de registro de una medida de presión sanguínea">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Sistólica">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Diastólica">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Comentarios">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Posición">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Sentado">
+					description = <"33586001">
+				>
+				["at0010"] = <
+					text = <"De pie">
+					description = <"10904000">
+				>
+				["at0011"] = <
+					text = <"Reclinado">
+					description = <"399366008">
+				>
+				["at0012"] = <
+					text = <"Tumbado">
+					description = <"40199007">
+				>
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0000"] = <[SNOMED-CT::75367002]>
+				["at0004"] = <[SNOMED-CT::271649006]>
+				["at0005"] = <[SNOMED-CT::271650006]>
+				["at0006"] = <[SNOMED-CT::703852005]>
+				["at0008"] = <[SNOMED-CT::9851009]>
+			>
+		>
+	>

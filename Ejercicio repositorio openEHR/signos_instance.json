@@ -1,0 +1,354 @@
+{
+     "archetype_node_id": "openEHR-EHR-COMPOSITION.signos.v1",
+    "_type": "COMPOSITION",
+    "name": { "value": "Signos vitales" },
+    "uid": {
+      "_type": "HIER_OBJECT_ID",
+      "value": "930f6dc8-048b-11eb-adc1-0242ac120002"
+    },
+    "archetype_details": {
+      "archetype_id": { "value": "openEHR-EHR-COMPOSITION.signos.v1" },
+      "template_id": { "value": "signos.es.v1" },
+      "rm_version": "1.0.2"
+    },
+    "language": {
+      "terminology_id": { "value": "ISO_639-1" },
+      "code_string": "es"
+    },
+    "territory": {
+      "terminology_id": { "value": "ISO_3166-1" },
+      "code_string": "ES"
+    },
+    "category": {
+      "value": "event",
+      "defining_code": {
+        "terminology_id": { "value": "openehr" },
+        "code_string": "433"
+      }
+    },
+    "composer": {
+      "_type": "PARTY_IDENTIFIED",
+      "external_ref": {
+        "id": {
+          "_type": "HIER_OBJECT_ID",
+          "value": "930f703e-048b-11eb-adc1-0242ac120002"
+        },
+        "namespace": "DEMOGRAPHIC",
+        "type": "PERSON"
+      },
+      "name": "Dr. Spock"
+    },
+    "context": {
+      "start_time": { "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT" },
+      "setting": {
+        "value": "primary nursing care",
+        "defining_code": {
+          "terminology_id": { "value": "openehr" },
+          "code_string": "229"
+        }
+      }
+    },
+    "content": [
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.blood_pressure.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Blood Pressure" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0001",
+          "_type": "HISTORY",
+          "name": { "value": "history" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0006",
+            "_type": "POINT_EVENT",
+            "name": { "value": "any event" },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0003",
+              "_type": "ITEM_TREE",
+              "name": { "value": "blood pressure" },
+              "items": [
+                {
+                  "archetype_node_id": "at0004",
+                  "_type": "ELEMENT",
+                  "name": { "value": "Systolic" },
+                  "value": {
+                    "_type": "DV_QUANTITY",
+                    "magnitude": "SYSTOLIC",
+                    "units": "mm[Hg]"
+                  }
+                },
+                {
+                  "archetype_node_id": "at0005",
+                  "_type": "ELEMENT",
+                  "name": { "value": "Diastolic" },
+                  "value": {
+                    "_type": "DV_QUANTITY",
+                    "magnitude": "DIASTOLIC",
+                    "units": "mm[Hg]"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.body_temperature.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Body temperature" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0002",
+          "_type": "HISTORY",
+          "name": { "value": "History" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0003",
+            "_type": "POINT_EVENT",
+            "name": { "value": "Any event" },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0001",
+              "_type": "ITEM_TREE",
+              "name": { "value": "Tree" },
+              "items": {
+                "archetype_node_id": "at0004",
+                "_type": "ELEMENT",
+                "name": { "value": "Temperature" },
+                "value": {
+                  "_type": "DV_QUANTITY",
+                  "magnitude": "TEMPERATURE",
+                  "units": "°C"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.pulse.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Pulso" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0002",
+          "_type": "HISTORY",
+          "name": { "value": "*history(en)" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0003",
+            "_type": "POINT_EVENT",
+            "name": { "value": "*Any event(en)" },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0001",
+              "_type": "ITEM_TREE",
+              "name": { "value": "*structure(en)" },
+              "items": {
+                "archetype_node_id": "at0004",
+                "_type": "ELEMENT",
+                "name": {
+                  "_type": "DV_CODED_TEXT",
+                  "value": "Frecuencia del pulso",
+                  "defining_code": {
+                    "terminology_id": { "value": "local" },
+                    "code_string": "at1026"
+                  }
+                },
+                "value": {
+                  "_type": "DV_QUANTITY",
+                  "magnitude": "PULSE_FRECUENCY",
+                  "units": "/min"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.respiration.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Respirations" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0001",
+          "_type": "HISTORY",
+          "name": { "value": "history" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0002",
+            "_type": "POINT_EVENT",
+            "name": { "value": "Any event" },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0003",
+              "_type": "ITEM_TREE",
+              "name": { "value": "List" },
+              "items": {
+                "archetype_node_id": "at0004",
+                "_type": "ELEMENT",
+                "name": { "value": "Rate" },
+                "value": {
+                  "_type": "DV_QUANTITY",
+                  "magnitude": "40",
+                  "units": "/min"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.body_weight.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Peso corporal" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0002",
+          "_type": "HISTORY",
+          "name": { "value": "*history(en)" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0003",
+            "_type": "POINT_EVENT",
+            "name": { "value": "Cualquier evento." },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0001",
+              "_type": "ITEM_TREE",
+              "name": { "value": "*Simple(en)" },
+              "items": {
+                "archetype_node_id": "at0004",
+                "_type": "ELEMENT",
+                "name": { "value": "Peso" },
+                "value": {
+                  "_type": "DV_QUANTITY",
+                  "magnitude": "WEIGHT",
+                  "units": "kg"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "archetype_node_id": "openEHR-EHR-OBSERVATION.height.v1",
+        "_type": "OBSERVATION",
+        "name": { "value": "Height/Length" },
+        "language": {
+          "terminology_id": { "value": "ISO_639-1" },
+          "code_string": "es"
+        },
+        "encoding": {
+          "terminology_id": { "value": "Unicode" },
+          "code_string": "UTF-8"
+        },
+        "subject": { "_type": "PARTY_SELF" },
+        "data": {
+          "archetype_node_id": "at0001",
+          "_type": "HISTORY",
+          "name": { "value": "history" },
+          "origin": {
+            "_type": "DV_DATE_TIME",
+            "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+          },
+          "events": {
+            "archetype_node_id": "at0002",
+            "_type": "POINT_EVENT",
+            "name": { "value": "Any event" },
+            "time": {
+              "_type": "DV_DATE_TIME",
+              "value": "DATE WITH YYYY-MM-DDTHH:MM:SS FORMAT"
+            },
+            "data": {
+              "archetype_node_id": "at0003",
+              "_type": "ITEM_TREE",
+              "name": { "value": "Simple" },
+              "items": {
+                "archetype_node_id": "at0004",
+                "_type": "ELEMENT",
+                "name": { "value": "Height/Length" },
+                "value": {
+                  "_type": "DV_QUANTITY",
+                  "magnitude": "HEIGHT",
+                  "units": "cm"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
